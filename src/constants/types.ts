@@ -169,4 +169,5 @@ export interface BrandDataType {
   offerDesc: string;
   terms: string;
   redemption_count: string | number;
+  offerName: string;
 }
