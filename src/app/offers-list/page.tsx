@@ -32,7 +32,7 @@ const columns: ColumnDef<any>[] = [
   {
     accessorKey: 'offerName',
     header: 'Offer Name',
-    cell: ({ row }) => <div className="capitalize">{row.original.offerName.join(',')}</div>,
+    cell: ({ row }) => <div className="capitalize">{row.original.offerName || ''}</div>,
   },
   {
     accessorKey: 'liveFrom',

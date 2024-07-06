@@ -19,6 +19,7 @@ const schema = z.object({
   brandName: z.string({ required_error: 'Please enter a brand name' }),
   location: z.array(z.string({ required_error: 'Please select locations' })),
   category: z.string({ required_error: 'Please select a building' }),
+  offerName: z.string({ required_error: 'Please select a offerName' }),
   validity: z.date({ required_error: 'Please select a validity date' }),
   url: z.string({ required_error: 'Please enter an url' }),
   coupon: z.string({ required_error: 'Please enter your coupon' }),
@@ -105,6 +106,12 @@ function CreateOfferPage() {
       label: 'Please enter your offer name',
       type: FORM_FIELD_TYPES.TEXT,
       placeholder: 'Please the offer name',
+    },
+    {
+      name: 'offerName',
+      label: 'Please enter your offer name',
+      type: FORM_FIELD_TYPES.TEXT,
+      placeholder: 'Please the enter offer name',
     },
     {
       name: 'offerDesc',
