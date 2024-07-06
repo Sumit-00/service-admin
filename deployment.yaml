@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: raven-fe
+  namespace: staging-services
+  labels:
+    app: raven-fe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: raven-fe
+  template:
+    metadata:
+      labels:
+        app: raven-fe
+    spec:
+      containers:
+        - name: raven-fe
+          image: 767397791769.dkr.ecr.ap-south-1.amazonaws.com/raven-ops-frontend:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: raven-fe-service
+  namespace: staging-services
+spec:
+  selector:
+    app: raven-fe
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000

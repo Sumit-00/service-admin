@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'Apercu Pro';
+  src:
+    url('./fonts/apercu-pro/ApercuPro-Regular.woff2') format('woff2'),
+    url('./fonts/apercu-pro/ApercuPro-Medium.woff2') format('woff2'),
+    url('./fonts/apercu-pro/ApercuPro-Bold.woff2') format('woff2'),
+    url('./fonts/apercu-pro/ApercuPro-Black.woff2') format('woff2'),
+    url('./fonts/apercu-pro/ApercuPro-Italic.woff2') format('woff2'),
+    url('./fonts/apercu-pro/ApercuPro-MediumItalic.woff2') format('woff2'),
+    url('./fonts/apercu-pro/ApercuPro-BoldItalic.woff2') format('woff2'),
+    url('./fonts/apercu-pro/ApercuPro-BlackItalic.woff2') format('woff2'),
+    url('./fonts/apercu-pro/ApercuPro-Light.woff2') format('woff2'),
+    url('./fonts/apercu-pro/ApercuPro-LightItalic.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'WeWork Serif';
+  src:
+    url('./fonts/wework-serif/wework-serif-regular.woff2') format('woff2'),
+    url('./fonts/wework-serif/wework-serif-italic.woff2') format('woff2');
+  font-display: swap;
+}

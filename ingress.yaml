@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ravenops-fe-ingress
+  namespace: staging-services
+  annotations:
+    alb.ingress.kubernetes.io/load-balancer-name: k8s-external-lb
+    service.beta.kubernetes.io/aws-load-balancer-type: external
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/ip-address-type: ipv4
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80} , {"HTTPS":443}]'
+    alb.ingress.kubernetes.io/subnets: subnet-00cfff6442054476a , subnet-0273e937d4b6ef871
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-south-1:767397791769:certificate/19f8d302-49d1-4bf9-84f6-146a4aed07b4
+    alb.ingress.kubernetes.io/ssl-redirect: "443"
+    alb.ingress.kubernetes.io/healthcheck-path: /
+    alb.ingress.kubernetes.io/group.name: staging-services
+spec:
+  ingressClassName: alb
+  rules:
+    - host: ravenops.wwistaging.in
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: raven-fe-service
+                port:
+                  number: 80
