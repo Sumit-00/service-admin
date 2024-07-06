@@ -108,12 +108,6 @@ function CreateOfferPage() {
       placeholder: 'Please the offer name',
     },
     {
-      name: 'offerName',
-      label: 'Please enter your offer name',
-      type: FORM_FIELD_TYPES.TEXT,
-      placeholder: 'Please the enter offer name',
-    },
-    {
       name: 'offerDesc',
       label: 'Please enter your offer description',
       type: FORM_FIELD_TYPES.TEXT,
